@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geometry Honors Review</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+
+function check(button, correct){
+
+    if(correct){
+        button.classList.add("correct");
+    }
+    else{
+        button.classList.add("wrong");
+    }
+
+    let siblings =
+        button.parentElement.querySelectorAll("button");
+
+    siblings.forEach(btn=>{
+        btn.disabled=true;
+    });
+}
+
+</script>
+
+<div class="hero">
+    <h1>Geometry Honors</h1>
+    <p>Interactive Review of Circles and Areas of Regular Polygons</p>
+
+    <a href="#circles" class="button">
+        Start Learning
+    </a>
+</div>
+<div class="background-glow"></div>
+
+<nav>
+    <a href="diagram.html">Circles</a>
+    <a href="#arcs">Arcs</a>
+    <a href="#angles">Angles</a>
+    <a href="#sector">Sector Area</a>
+    <a href="#polygons">Polygons</a>
+    <a href="#quiz">Quiz</a>
+</nav>
+
+<section id="circles" class="card">
+    <h2>Circle Vocabulary</h2>
+
+    <div class="grid">
+        <div><strong>Radius</strong><br>Segment from center to circle.</div>
+        <div><strong>Diameter</strong><br>Chord through the center.</div>
+        <div><strong>Chord</strong><br>Segment with endpoints on circle.</div>
+        <div><strong>Secant</strong><br>Line intersecting circle twice.</div>
+        <div><strong>Arc</strong><br>Part of circumference.</div>
+        <div><strong>Sector</strong><br>Region between two radii.</div>
+    </div>
+</section>
+<section id="circles" class="card">
+
+<h2>Understanding Circles</h2>
+
+<p class="intro">
+Circles are one of the most important shapes in geometry because every point on a circle is the same distance from its center. Engineers use circles when designing gears and wheels, architects use them when creating domes, and mathematicians use them to understand relationships between distance, angles, and area. Before solving problems involving circles, it is important to understand the parts that make up a circle and how they work together.
+</p>
+
+<h3>Important Circle Vocabulary</h3>
+
+<div class="grid">
+    <div>
+        <h4>Radius</h4>
+        <p>
+        A segment connecting the center of the circle to any point on the circle.
+        Every radius in a circle has the same length.
+        </p>
+    </div>
+
+    <div>
+        <h4>Diameter</h4>
+        <p>
+        A chord that passes through the center of the circle. The diameter is always twice the radius.
+        </p>
+    </div>
+
+    <div>
+        <h4>Chord</h4>
+        <p>
+        A segment whose endpoints lie on the circle.
+        </p>
+    </div>
+
+    <div>
+        <h4>Secant</h4>
+        <p>
+        A line that intersects the circle at exactly two points.
+        </p>
+    </div>
+</div>
+
+</section>
+<section id="arcs" class="card">
+    <h2>Types of Arcs</h2>
+<section id="arcs" class="card">
+
+<h2>Understanding Arcs of a Circle</h2>
+
+<p class="intro">
+Whenever we travel along the edge of a circle, we are moving along an arc. Arcs are everywhere in the real world, from the path of a Ferris wheel to the curved shape of bridges and roads. Understanding arcs allows us to determine distances around circles and understand how angles and circles are related.
+</p>
+
+<p>
+Every arc has a measure expressed in degrees. The measure of an arc corresponds directly to the measure of the central angle that intercepts it. Because a complete circle contains 360°, every arc is part of that total.
+</p>
+
+
+
+
+<div class="grid">
+
+<div>
+<h3>Minor Arc</h3>
+<p>
+A minor arc measures less than 180°. It is the shortest path between two points on a circle.
+</p>
+</div>
+
+<div>
+<h3>Semicircle</h3>
+<p>
+A semicircle measures exactly 180° and is formed by a diameter.
+</p>
+</div>
+
+<div>
+<h3>Major Arc</h3>
+<p>
+A major arc measures more than 180° and travels the longer way around the circle.
+</p>
+</div>
+
+</div>
+<div class="container">
+
+    <!-- DIAGRAM -->
+    <div class="diagram">
+        <svg viewBox="0 0 500 500">
+
+            <!-- Outer Circle -->
+            <circle cx="250" cy="250" r="180" fill="none" stroke="white" stroke-width="3"/>
+
+            <!-- Diameter -->
+            <line x1="70" y1="250" x2="430" y2="250" stroke="#facc15" stroke-width="3"
+                  class="clickable"
+                  onclick="showInfo('diameter')"/>
+
+            <!-- Radius -->
+            <line x1="250" y1="250" x2="430" y2="250" stroke="#22c55e" stroke-width="3"
+                  class="clickable"
+                  onclick="showInfo('radius')"/>
+
+            <!-- Sector -->
+            <path d="M250 250 L250 70 A180 180 0 0 1 410 250 Z"
+                  fill="#3b82f6"
+                  opacity="0.6"
+                  class="clickable"
+                  onclick="showInfo('sector')"/>
+
+            <!-- Minor Arc label -->
+            <path d="M410 250 A180 180 0 0 1 250 70"
+                  fill="none"
+                  stroke="#ef4444"
+                  stroke-width="4"
+                  class="clickable"
+                  onclick="showInfo('minorArc')"/>
+
+            <!-- Major Arc -->
+            <path d="M250 70 A180 180 0 1 1 250 430"
+                  fill="none"
+                  stroke="#a855f7"
+                  stroke-width="4"
+                  class="clickable"
+                  onclick="showInfo('majorArc')"/>
+
+            <!-- Semicircle -->
+            <path d="M70 250 A180 180 0 0 0 430 250"
+                  fill="none"
+                  stroke="#f97316"
+                  stroke-width="4"
+                  class="clickable"
+                  onclick="showInfo('semicircle')"/>
+
+            <!-- Labels -->
+            <text x="250" y="245" class="label">Center</text>
+            <text x="370" y="240" class="label">Radius</text>
+            <text x="250" y="40" class="label">Circle Parts</text>
+
+        </svg>
+    </div>
+
+    <!-- INFO PANEL -->
+    <div class="info">
+        <h2 id="title">Click a part</h2>
+        <p id="desc">
+            Click a line, arc, or shaded region in the circle to learn what it represents.
+        </p>
+    </div>
+
+</div>
+
+<script>
+const data = {
+    diameter: {
+        title: "Diameter",
+        desc: "A line that goes straight across the circle through the center. It is twice the radius."
+    },
+    radius: {
+        title: "Radius",
+        desc: "A line from the center of the circle to any point on the edge."
+    },
+    sector: {
+        title: "Sector",
+        desc: "A 'slice of pizza' shape. Used to find area of a sector of a circle using angle proportion."
+    },
+    minorArc: {
+        title: "Minor Arc",
+        desc: "The shorter path between two points on a circle."
+    },
+    majorArc: {
+        title: "Major Arc",
+        desc: "The longer path between two points on a circle."
+    },
+    semicircle: {
+        title: "Semicircle",
+        desc: "Half of a circle formed by a diameter. Arc length is half the circumference."
+    }
+};
+
+function showInfo(key) {
+    document.getElementById("title").innerText = data[key].title;
+    document.getElementById("desc").innerText = data[key].desc;
+}
+</script>
+<section id="angles" class="card">
+    <h2>Inscribed Angles</h2>
+
+    <p>
+        An inscribed angle has its vertex on the circle.
+    </p>
+
+    <div class="formula">
+        Inscribed Angle = Intercepted Arc ÷ 2
+    </div>
+
+    <h3>Example</h3>
+
+    <p>
+        If the intercepted arc measures 120°,
+        the inscribed angle measures 60°.
+    </p>
+</section>
+
+<section id="sector" class="card">
+
+<h2>Finding the Area of a Sector</h2>
+
+<p class="intro">
+A sector is a portion of a circle enclosed by two radii and an arc. Sectors appear everywhere in everyday life, from slices of pizza to pie charts and Ferris wheels. Since a sector is only part of a circle, its area depends on what fraction of the circle it represents.
+</p>
+
+<div class="formula">
+Area of Sector =
+(θ ÷ 360) × πr²
+</div>
+
+<h3>Worked Example</h3>
+
+<p>
+Find the area of a sector with a central angle of 90° and radius of 10 units.
+</p>
+
+<p>
+A = (90 ÷ 360)(π)(10²)
+<br>
+A = (1/4)(100π)
+<br>
+A = 25π units²
+</p>
+
+</section>
+
+<section id="polygons" class="card">
+
+    <h2>Regular Polygons</h2>
+
+    <p>
+        A regular polygon has equal sides and equal angles.
+    </p>
+
+    <div class="formula">
+        Area = ½aP
+    </div>
+
+    <h3>Example</h3>
+
+    <p>
+        Apothem = 8<br>
+        Perimeter = 48
+    </p>
+
+    <div class="formula">
+        A = ½(8)(48) = 192 units²
+    </div>
+
+</section>
+
+<section class="card">
+
+    <h2>Connections Between Topics</h2>
+
+    <ul>
+        <li>Circles help define regular polygons.</li>
+        <li>The apothem acts like a radius inside polygons.</li>
+        <li>Sector area uses the same area formula as circles.</li>
+        <li>Arc measures connect directly to angle measures.</li>
+    </ul>
+
+</section>
+
+<section id="quiz" class="card">
+
+<h2>Geometry Review Quiz</h2>
+
+<p class="intro">
+Test your understanding of circles, arcs, sectors, and regular polygons. Click an answer to see whether you are correct.
+</p>
+
+<div class="question">
+
+<h3>1. What is the measure of a semicircle?</h3>
+
+<button onclick="check(this,false)">90°</button>
+<button onclick="check(this,true)">180°</button>
+<button onclick="check(this,false)">270°</button>
+<button onclick="check(this,false)">360°</button>
+
+</div>
+
+<div class="question">
+
+<h3>2. What formula finds the area of a regular polygon?</h3>
+
+<button onclick="check(this,false)">πr²</button>
+<button onclick="check(this,true)">½aP</button>
+<button onclick="check(this,false)">bh</button>
+<button onclick="check(this,false)">lw</button>
+
+</div>
+
+<div class="question">
+
+<h3>3. An inscribed angle measures:</h3>
+
+<button onclick="check(this,true)">
+Half its intercepted arc
+</button>
+
+<button onclick="check(this,false)">
+Equal to its intercepted arc
+</button>
+
+<button onclick="check(this,false)">
+Double its intercepted arc
+</button>
+
+<button onclick="check(this,false)">
+Always 90°
+</button>
+
+</div>
+
+</section>
+
+<footer>
+    Geometry Honors Review Project
+</footer>
+
+</body>
+</html>
+

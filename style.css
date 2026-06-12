@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: system-ui, Arial;
+    background: radial-gradient(circle at top, #0b1220, #05060d);
+    color: white;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    padding: 16px;
+    background: rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav a {
+    color: #93c5fd;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* MAIN */
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 40px;
+    color: #60a5fa;
+    margin-bottom: 10px;
+}
+
+/* INTRO */
+.subtitle {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+/* BIG DROPDOWN BOX */
+.box {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+/* CLICK HEADER */
+.box h2 {
+    margin: 0;
+    padding: 18px;
+    font-size: 22px;
+    cursor: pointer;
+    background: rgba(96,165,250,0.12);
+    transition: 0.2s;
+}
+
+.box h2:hover {
+    background: rgba(96,165,250,0.22);
+}
+
+/* CONTENT AREA */
+.content {
+    padding: 18px;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* VISUAL CARDS INSIDE CONTENT */
+.card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 14px;
+    border-radius: 12px;
+    margin: 10px 0;
+}
+
+/* STEP STYLE */
+.step {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.step span {
+    background: #2563eb;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+}

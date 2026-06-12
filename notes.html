@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<title>Geometry Study Guide</title>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="quiz.html">Quiz</a>
+<a href="circle.html">Circle</a>
+<a href="tangent.html">Tangent</a>
+<a href="chord.html">Chord</a>
+<a href="secant.html">Secant</a>
+</nav>
+
+<div class="container">
+
+<h1>📘 Geometry Study Guide</h1>
+
+<p style="font-size:18px; opacity:0.85; line-height:1.6;">
+This guide follows class notes and explains each concept clearly so you understand both the definitions and the reasoning behind them.
+</p>
+
+---
+
+<!-- ================= CIRCUMFERENCE ================= -->
+<div class="box">
+<h2 onclick="toggle('circumference')" style="cursor:pointer;">🔵 Circumference</h2>
+
+<div id="circumference" style="display:none; font-size:17px; line-height:1.7;">
+
+<p><b>Definition:</b> The circumference of a circle is the distance around the circle.</p>
+
+<hr>
+
+<p><b>Should I round?</b></p>
+
+<p>
+When you are asked to find a circumference, leave the answer in terms of π (exact form) unless you are asked to approximate.
+</p>
+
+<p><b>Exact form example:</b> 10π</p>
+
+<hr>
+
+<p><b>How do I approximate?</b></p>
+
+<p>
+To approximate, use a calculator and press the π button.
+Then multiply normally and round if needed.
+</p>
+
+<p><b>Example:</b></p>
+<p>r = 5 → C = 2πr = 10π ≈ 31.4</p>
+
+</div>
+</div>
+
+---
+
+<!-- ================= CIRCLE BASICS ================= -->
+<div class="box">
+<h2 onclick="toggle('circledefs')" style="cursor:pointer;">🔵 Circle Basics</h2>
+
+<div id="circledefs" style="display:none; font-size:17px; line-height:1.7;">
+
+<p>A circle is the set of all points equidistant from a center point.</p>
+
+<p><b>Radius:</b> segment from center to circle</p>
+<p><b>Chord:</b> segment with endpoints on circle</p>
+<p><b>Diameter:</b> chord through center</p>
+<p><b>Secant:</b> line intersecting circle twice</p>
+<p><b>Tangent:</b> line touching circle once</p>
+
+<p><b>Tangent rules:</b></p>
+<ul>
+<li>Tangent is perpendicular to radius at point of tangency</li>
+<li>If a line is perpendicular to a radius at the endpoint, it is tangent</li>
+</ul>
+
+</div>
+</div>
+
+---
+
+<!-- ================= SECTORS ================= -->
+<div class="box">
+<h2 onclick="toggle('sectors')" style="cursor:pointer;">🥧 Sectors</h2>
+
+<div id="sectors" style="display:none; font-size:17px; line-height:1.7;">
+
+<p>A sector of a circle is a region bound by two radii and their intercepted arc.</p>
+
+<p>Sectors are named using:
+- one arc endpoint  
+- center of circle  
+- other arc endpoint  
+</p>
+
+<p><b>Area idea:</b> A sector is a fraction of a circle’s area.</p>
+
+<p><b>Formula:</b> (θ / 360) × πr²</p>
+
+</div>
+</div>
+
+---
+
+<!-- ================= ARCS ================= -->
+<div class="box">
+<h2 onclick="toggle('arcs')" style="cursor:pointer;">🌙 Arcs</h2>
+
+<div id="arcs" style="display:none; font-size:17px; line-height:1.7;">
+
+<p>Adjacent arcs are arcs of the same circle that share exactly one endpoint.</p>
+
+<p><b>Arc Addition Postulate:</b></p>
+
+<p>The measure of an arc formed by two adjacent arcs is the sum of the two arc measures.</p>
+
+<p><b>Idea:</b> You can “combine” arcs by adding their measures.</p>
+
+</div>
+</div>
+
+---
+
+<!-- ================= INSCRIBED ANGLES ================= -->
+<div class="box">
+<h2 onclick="toggle('inscribed')" style="cursor:pointer;">📐 Inscribed Angles</h2>
+
+<div id="inscribed" style="display:none; font-size:17px; line-height:1.7;">
+
+<p>An inscribed angle has its vertex on the circle and its sides are chords.</p>
+<img src="images/inscribed.png">
+<p><b>Theorem:</b></p>
+<p>The measure of an inscribed angle is half the measure of its intercepted arc.</p>
+
+<p><b>Formula idea:</b></p>
+<p>Angle = ½ arc</p>
+
+</div>
+</div>
+
+---
+
+<!-- ================= INSCRIBED POLYGONS ================= -->
+<div class="box">
+<h2 onclick="toggle('inscribedpoly')" style="cursor:pointer;">Inscribed Polygons</h2>
+
+<div id="inscribedpoly" style="display:none; font-size:17px; line-height:1.7;">
+
+<p>A polygon is inscribed in a circle if all its vertices lie on the circle.</p>
+<img src="images/Screenshot 2026-06-11 221130.png">
+<p>The center of the inscribed circle in a polygon is called the incenter.</p>
+
+<p><b>Important rule:</b></p>
+
+<p>If a quadrilateral is inscribed in a circle, its opposite angles are supplementary.</p>
+
+<p><b>WHY?</b></p>
+<p>Opposite angles intercept arcs that sum to 360°. Half of that is 180°, so angles are supplementary.</p>
+
+<hr>
+
+<p><b>Special case:</b></p>
+
+<p>If a parallelogram is inscribed in a circle:</p>
+
+<ul>
+<li>Opposite angles are congruent (parallelogram rule)</li>
+<li>Opposite angles are supplementary (cyclic quadrilateral rule)</li>
+</ul>
+
+<p>So angles are both congruent and supplementary → each must be 90°.</p>
+
+<p><b>Conclusion:</b> The parallelogram is a rectangle.</p>
+
+</div>
+</div>
+
+---
+
+</div>
+
+<script>
+function toggle(id) {
+    const el = document.getElementById(id);
+    el.style.display = (el.style.display === "none") ? "block" : "none";
+}
+</script>
+
+</body>
+</html>
